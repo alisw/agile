@@ -21,6 +21,9 @@ namespace AGILe {
   /// Get LCG platform tag
   std::string getLCGPlatformTag();
 
+  /// Utility to append a vector of strings to another (Introduced since the += operator from
+  /// boost assign failed to work for boost > 1.68)
+  void vectorAppend(vector<string>& to, vector<string> const& from);
 
 }
 

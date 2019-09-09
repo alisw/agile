@@ -1,8 +1,14 @@
 #include "AGILe/AGILe.hh"
 #include "AGILe/Utils.hh"
 #include "binreloc.h"
+#include <algorithm>
 
 namespace AGILe {
+
+  
+  void vectorAppend(vector<string>& to, vector<string> const& from) {
+    std::copy(from.begin(), from.end(), std::back_inserter(to));
+  }
 
 
   string getLibPath() {
@@ -36,7 +42,7 @@ namespace AGILe {
     env = getenv("AGILE_GEN_PATH");
     if (env) {
       // Use the AGILe generator path variable if set...
-      dirs += split(env);
+      vectorAppend(dirs, split(env));
     } else {
       // Fall back to the Genser area on CERN AFS
       /// @todo deprecate Use of $AGILE_USE_AFS variable

@@ -88,13 +88,13 @@ namespace AGILe {
 
         // And then the user's (non-system) library path (inc. for dyld on OS X)
         const char* envld = getenv("LD_LIBRARY_PATH");
-        if (envld) dirs += split(envld);
+        if (envld) vectorAppend(dirs, split(envld));
         const char* envdyld = getenv("DYLD_LIBRARY_PATH");
-        if (envdyld) dirs += split(envdyld);
+        if (envdyld) vectorAppend(dirs, split(envdyld));
 
       } else {
         // If we're loading a real generator library...
-        dirs += getGenPaths();
+        vectorAppend(dirs, getGenPaths());
       }
 
       return dirs;
