@@ -1,3 +1,33 @@
+2021-02-02  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Version 1.5.1
+
+	* Fix osdir build behaviour on Macs (thanks to Ilkka Helenius for the report and patch).
+
+2019-09-11  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Version 1.5.0 (since major change to LCG default paths)
+
+	* Update interface to Python 3 (thanks to Richard Bachmann and the LCG releases team).
+
+2016-03-17  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Add --version flag to agile-runmc.
+
+	* Remove use of AGILE_USE_AFS environment variable.
+
+	* Update default search path to use CVMFS and the LCG_84 releases area.
+
+2014-04-14  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Force default prefix to have a path value rather than NONE.
+
+	* Adding Boost workaround for foreach namespace problems.
+
+2013-10-24  Andy Buckley  <andy.buckley@cern.ch>
+
+	* Supporting zsh completion via bash completion compatibility.
+
 2013-09-10  Andy Buckley  <andy.buckley@cern.ch>
 
 	* Patch version 1.4.1, with the OS X fix below.

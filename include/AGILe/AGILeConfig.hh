@@ -10,13 +10,13 @@
 #define AGILE_NAME "AGILe"
 
 /* Define to the full name and version of this package. */
-#define AGILE_STRING "AGILe 1.4.1"
+#define AGILE_STRING "AGILe 1.5.1"
 
 /* Define to the one symbol short name of this package. */
 #define AGILE_TARNAME "AGILe"
 
 /* Define to the version of this package. */
-#define AGILE_VERSION "1.4.1"
+#define AGILE_VERSION "1.5.1"
 
 
 #endif

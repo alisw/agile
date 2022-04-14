@@ -1,13 +1,24 @@
 ## -*- sh -*-
-## Analysis name completion for agile-runmc
+## Analysis name completion for AGILe scripts
 
+## Load bash completion compatibility if zsh is used
+if test -n "$ZSH_VERSION"; then
+    autoload bashcompinit
+    bashcompinit
+fi
+
+
+## Create a _filedir helper function if not already present
 (type _filedir &> /dev/null) || \
 function _filedir() {
-	local cur prev commands options command
+    local cur prev commands options command
     cur="${COMP_WORDS[COMP_CWORD]}"
-    COMPREPLY=( $(compgen -W $* "$(ls ${cur}* 2> /dev/null)" -- ${cur}) )
+    COMPREPLY=( $(compgen -W "$(ls ${cur}* 2> /dev/null)" -- ${cur}) )
     return 0
 }
+
+
+##########################
 
 
 function _agile_runmc() {

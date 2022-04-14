@@ -38,12 +38,8 @@ namespace AGILe {
       // Use the AGILe generator path variable if set...
       dirs += split(env);
     } else {
-      // Fall back to the Genser area on CERN AFS
-      /// @todo deprecate Use of $AGILE_USE_AFS variable
-      const char* envAUA = getenv("AGILE_USE_AFS");
-      if (!envAUA || toUpper(string(envAUA)) != "NO") {
-        dirs += "/afs/cern.ch/sw/lcg/external/MCGenerators";
-      }
+      // Fall back to the Genser area (v84) on CERN CVMFS
+      dirs += "/cvmfs/sft.cern.ch/lcg/releases/LCG_84/MCGenerators";
     }
     return dirs;
   }

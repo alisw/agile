@@ -18,7 +18,7 @@ from agilewrap import *
 ## Provide an extra Python-only function used to enforce the AGILe scripts' minimal Python version
 def check_python_version():
     import sys
-    req_version = (2,4,0)
+    req_version = (2,7,0)
     if sys.version_info[:3] < req_version:
-        print "rivet scripts require Python version >= %s... exiting" % ".".join(req_version)
+        print("AGILe scripts require Python version >= %s... exiting" % ".".join(req_version))
         sys.exit(1)

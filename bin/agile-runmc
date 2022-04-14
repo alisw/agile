@@ -137,7 +137,16 @@ verbgroup.add_option("-v", "--verbose", help="Add extra debug messages", dest="L
                   action="store_const", default=logging.INFO, const=logging.DEBUG)
 parser.add_option_group(verbgroup)
 
+parser.add_option("--version", help="Print out the AGILe version", dest="PRINT_VERSION",
+                  action="store_true", default=False)
+
 opts, args = parser.parse_args()
+
+
+## Print the version and exit, if requested
+if opts.PRINT_VERSION:
+   print AGILe.version()
+   exit(0)
 
 
 ## Change log level if AGILE_DEBUG env variable is set

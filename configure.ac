@@ -1,10 +1,17 @@
 ## Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT([AGILe],[1.4.1],[rivet@projects.hepforge.org],[AGILe])
+AC_INIT([AGILe],[1.5.1],[rivet@projects.hepforge.org],[AGILe])
+
+## Check and block installation into the src/build dir
 if test "$prefix" = "$PWD"; then
   AC_MSG_ERROR([Installation into the build directory is not supported: use a different --prefix argument])
 fi
+## Force default prefix to have a path value rather than NONE
+if test "$prefix" = "NONE"; then
+   prefix=/usr/local
+fi
+
 AC_CONFIG_SRCDIR([src/Core/Loader.cc])
 AC_CONFIG_HEADER([include/AGILe/DummyConfig.hh include/AGILe/AGILeConfig.hh include/AGILe/FortranWrappers.hh])
 AM_INIT_AUTOMAKE(dist-bzip2)
@@ -19,7 +26,7 @@ AC_DEFINE_UNQUOTED(AGILE_TARNAME, "$PACKAGE_TARNAME", "AGILe short name string")
 AC_DEFINE_UNQUOTED(AGILE_BUGREPORT, "$PACKAGE_BUGREPORT", "AGILe contact email address")
 
 ## Library version flags, current:revision:age (increment these for each new version)
-VERSIONFLAGS="-version-info 10:0:0" ## set for 1.4.1
+VERSIONFLAGS="-version-info 10:0:0" ## set for 1.5.0
 AC_SUBST(VERSIONFLAGS)
 
 ## Cache PATH variable

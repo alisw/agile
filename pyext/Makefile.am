@@ -1,5 +1,3 @@
-EXTRA_DIST = ez_setup.py
-
 if ENABLE_PYEXT
 
 SUBDIRS = AGILe .
